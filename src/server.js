@@ -31,6 +31,7 @@ express() // You can also use Express
 					// Session cookie is unavailable or invalid. Force user to login.
 					//res.redirect('/login');
 					console.log(error)
+					res.clearCookie('__session');
 					res.currentUser = null
 					next()
 				});
